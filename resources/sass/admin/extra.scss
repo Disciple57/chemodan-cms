@@ -1,0 +1,49 @@
+html, body {
+    min-height:100vh;
+}
+
+.no-border,
+.no-border input,
+.no-border textarea {
+    border: 0;
+    outline: 0;
+    outline-offset: 0;
+}
+
+.no-focus:focus {
+    box-shadow: none;
+}
+
+.no-decor,
+.no-decor a,
+.no-decor:hover ,
+.no-decor a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.toast-container {
+    position:relative;
+}
+.toast {
+    position: absolute;
+    z-index: 999;
+    top:0;
+    right:0;
+    opacity: 0;
+    color: #ffffff;
+}
+
+.action-btn {
+    cursor:pointer;
+}
+.action-btn:hover {
+    color: #0a6ebd;
+}
+.ajax-indicator {
+    position: absolute;
+    top:0.5rem;
+    right:0.5rem;
+    display: none;
+}
+

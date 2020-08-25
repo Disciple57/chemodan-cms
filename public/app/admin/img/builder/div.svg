@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 526.14288 136.06106"
+   height="514.24652"
+   width="1988.5715"
+   sodipodi:docname="div.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview10"
+     showgrid="true"
+     inkscape:zoom="1.0809793"
+     inkscape:cx="893.92458"
+     inkscape:cy="169.84177"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8">
+    <inkscape:grid
+       type="xygrid"
+       id="grid817" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <rect
+     style="fill:#f9f9f9;fill-opacity:1;stroke:none;stroke-width:0.19610253;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect931"
+     width="526.14288"
+     height="136.06105"
+     x="0"
+     y="-2.8421709e-14" />
+  <rect
+     style="fill:#7b7b7b;fill-opacity:1;stroke:none;stroke-width:0.90616971;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect819"
+     width="486.07077"
+     height="105.91191"
+     x="18.59643"
+     y="14.800209" />
+  <g
+     aria-label="&lt;DIV&gt;"
+     style="font-style:normal;font-weight:normal;font-size:12.69999981px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#d9d9d9;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+     id="text817">
+    <path
+       d="m 212.01118,63.092815 -25.59843,9.10332 25.59843,9.053711 v 4.514453 L 180.21157,74.23012 v -4.117579 l 31.79961,-11.534179 z"
+       style="font-size:50.79999924px;text-align:center;text-anchor:middle;fill:#d9d9d9;fill-opacity:1;stroke-width:0.26458332"
+       id="path823" />
+    <path
+       d="m 227.39009,55.18012 v 28.798242 h 6.05234 q 7.66465,0 11.21172,-3.472657 3.57187,-3.472656 3.57187,-10.963671 0,-7.441406 -3.57187,-10.889258 -3.54707,-3.472656 -11.21172,-3.472656 z m -5.01055,-4.117578 h 10.29395 q 10.76523,0 15.80058,4.489648 5.03535,4.464844 5.03535,13.989844 0,9.574609 -5.06015,14.064257 -5.06016,4.489649 -15.77578,4.489649 h -10.29395 z"
+       style="font-size:50.79999924px;text-align:center;text-anchor:middle;fill:#d9d9d9;fill-opacity:1;stroke-width:0.26458332"
+       id="path825" />
+    <path
+       d="m 261.47173,51.062542 h 5.01054 V 88.09594 h -5.01054 z"
+       style="font-size:50.79999924px;text-align:center;text-anchor:middle;fill:#d9d9d9;fill-opacity:1;stroke-width:0.26458332"
+       id="path827" />
+    <path
+       d="M 286.00356,88.09594 271.86489,51.062542 h 5.23379 l 11.73262,31.179491 11.75742,-31.179491 h 5.20898 L 291.68384,88.09594 Z"
+       style="font-size:50.79999924px;text-align:center;text-anchor:middle;fill:#d9d9d9;fill-opacity:1;stroke-width:0.26458332"
+       id="path829" />
+    <path
+       d="m 311.57719,63.092815 v -4.514453 l 31.79961,11.534179 v 4.117579 l -31.79961,11.534179 v -4.514453 l 25.54883,-9.053711 z"
+       style="font-size:50.79999924px;text-align:center;text-anchor:middle;fill:#d9d9d9;fill-opacity:1;stroke-width:0.26458332"
+       id="path831" />
+  </g>
+</svg>

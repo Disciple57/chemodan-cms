@@ -1,0 +1,45 @@
+<script id="store" type="text/x-jsrender">
+<div class="modal-header">
+    <h5 class="modal-title">{{:~data_json.headers}}</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form id="form">
+    <div class="modal-body">
+        <div class="form-group">
+            <input type="text" id="prefix" class="form-control" name="prefix" placeholder="Префикс" value="" autocomplete="off">
+            <span class="invalid-feedback" role="alert"></span>
+        </div>
+        {{for ~data_json._extra}}
+        <div class="form-group row">
+            <label class="col-2" for="{{:}}">.{{:}}</label>
+            <div class="col-10">
+                <input type="file" id="{{:}}" class="form-control-file" name="{{:}}" accept=".{{:}}">
+                <span class="invalid-feedback" role="alert"></span>
+            </div>
+        </div>
+        {{/for}}
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+        <button data-json='{"{{:~data_json.action}}": true, "id": "{{:~data_json.id}}"}' type="submit" class="btn btn-primary send-form">Сохранить</button>
+    </div>
+</form>
+</script>
+
+<script id="delete" type="text/x-jsrender">
+<div class="modal-header">
+    <h5 class="modal-title">{{:~data_json.headers}}</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+    <div class="modal-body">
+            Вы действительно хотите удалить <strong>"{{>name}}"</strong>?
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Нет</button>
+        <button data-json='{"delete": true, "id": "{{:~data_json.id}}"}' class="btn btn-primary">Да</button>
+    </div>
+</script>

@@ -1,0 +1,57 @@
+<script id="update" type="text/x-jsrender">
+<div class="modal-header">
+    <h5 class="modal-title">{{:~data_json.headers}}</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form id="form">
+    <div class="modal-body">
+    <div class="form-group">
+    {{*DATA.current_user.id}}
+    {{if ~data_json._extra.current_user.role === 'superadmin'}}
+        <span>Роль</span>
+        <select class="form-control" id="role" name="role">
+        {{for ~data_json._extra.roles}}
+            <option {{if #data === ~root.role}} selected {{/if}}>{{>#data}}</option>
+        {{/for}}
+        </select>
+    {{/if}}
+</div>
+<div class="form-group">
+    <input type="name" id="name" class="form-control" name="name"
+           placeholder="Имя пользователя (логин)" value="{{>name}}" autocomplete="off">
+    <span class="invalid-feedback" role="alert"></span>
+
+</div>
+<div class="form-group">
+    <input type="password" class="form-control" name="password" placeholder="Пароль" autocomplete="off">
+    <span class="invalid-feedback" role="alert"></span>
+</div>
+<div class="form-group">
+    <input type="password" class="form-control" name="password_confirmation" placeholder="Подтверждение пароля" autocomplete="off">
+    <span class="invalid-feedback" role="alert"></span>
+</div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+<button data-json='{"{{:~data_json.action}}": true, "id": "{{:~data_json.id}}"}' type="submit" class="btn btn-primary send-form">Сохранить</button>
+</div>
+</form>
+</script>
+
+<script id="delete" type="text/x-jsrender">
+<div class="modal-header">
+    <h5 class="modal-title">{{:~data_json.headers}}</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+    <div class="modal-body">
+            Вы действительно хотите удалить пользователя <strong>"{{>name}}"</strong>?
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Нет</button>
+        <button data-json='{"delete": true, "id": "{{:~data_json.id}}"}' class="btn btn-primary">Да</button>
+    </div>
+</script>

@@ -1,0 +1,39 @@
+<script id="render_list_container" type="text/x-jsrender">
+{{for data}}
+    <div class="col-md-4 col-xl-2 mb-1" data-id="{{>id}}">
+        <div class="list-group h-100 text-center">
+            <div class="list-group-item text">
+                <div class="d-flex align-items-center fs-10">
+                    <span class="material-icons fs-14 action-btn drag mr-2">&#xe89f;</span>
+                    <strong class="fs-7">{{>name}}</strong>
+                    <span class="material-icons fs-12 action-btn ml-auto"
+               data-json='{
+               "headers": "Изменить компонент",
+               "action": "update",
+               "edit": true,
+               "id": "{{>id}}"
+               }'>&#xe3c9;</span>
+
+               <span class="material-icons fs-14 action-btn ml-1"
+               data-json='{
+               "modal": "#delete",
+               "headers": "Удаление",
+               "action": "delete",
+               "id": "{{>id}}",
+               "name": "{{>name}}"
+               }'>&#xe92b;</span>
+                </div>
+            </div>
+            <div class="list-group-item">
+                <i class="material-icons display-3">&#xe86f;</i>
+                <div class="mt-2">
+                    {{if html}}<span class="badge badge-pill badge-dark">HTML</span>{{/if}}
+                    {{if css}}<span class="badge badge-pill badge-dark">CSS</span>{{/if}}
+                    {{if js}}<span class="badge badge-pill badge-dark">JavaScript</span>{{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+{{/for}}
+{{* initSortable();}}
+</script>

@@ -1,0 +1,27 @@
+<script id="render_list_container" type="text/x-jsrender">
+{{for data}}
+    <div class="col-12 mb-5">
+        <div class="list-group h-100">
+            <div class="list-group-item text fa-lg">
+            <span class="material-icons fs-12 action-btn mr-2"
+               data-json='{
+               "index": "{{:#getIndex()}}",
+               "modal": "#update",
+               "headers": "Изменить",
+               "action": "update",
+               "extra": "images"
+               }'>&#xe3c9;</span>
+                <strong>{{>related.name}}</strong>
+                <a href="/{{>related.url}}" target="_blank" class="ml-2">/{{>related.url}}</a>
+            </div>
+            <div class="list-group-item text">
+                <strong>Заголовок:</strong> {{>meta.title}}
+            </div>
+            <div class="list-group-item text">
+                <strong>Краткое содержание:</strong> {{>meta.description}}
+            </div>
+
+        </div>
+    </div>
+{{/for}}
+</script>

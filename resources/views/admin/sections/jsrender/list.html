@@ -1,0 +1,34 @@
+<script id="render_list_container" type="text/x-jsrender">
+{{for data}}
+    <section data-id="{{>id}}">
+        <div class="container">
+        <span class="action-btn-group no-decor">
+            <span class="material-icons fs-12 action-btn drag">&#xe89f;</span>
+            {{if extra_resource === ~root.resource_type.builder}}
+                <a class="material-icons fs-12 action-btn" href="{{*:URL}}/{{>id}}/edit">&#xe869;</a>
+            {{/if}}
+                <span class="material-icons fs-12 action-btn"
+                    data-json='{
+                    "modal": "#delete",
+                    "headers": "Удаление",
+                    "action": "delete",
+                    "id": "{{>id}}"
+                    }'>&#xe92b;</span>
+        </span>
+            {{if extra_resource === ~root.resource_type.builder}}
+                {{if status==='published'}}
+                    <div class="preview-content">{{:html}}</div>
+                {{else}}
+                    <div class="d-flex align-items-center section-name"><i class="material-icons fs-50 mr-3">&#xe873;</i>Контент</div>
+                {{/if}}
+            {{else extra_resource === ~root.resource_type.component}}
+                <div class="d-flex align-items-center section-name"><i class="material-icons fs-50 mr-3">&#xe86f;</i>Компонент: {{>component.name}}</div>
+            {{else extra_resource === ~root.resource_type.slider}}
+                <div class="d-flex align-items-center section-name"><i class="material-icons fs-50 mr-3">&#xe63c;</i>Модуль: слайдер ({{>slider.name}})</div>
+            {{/if}}
+
+        </div>
+    </section>
+{{/for}}
+{{* initSortable();}}
+</script>

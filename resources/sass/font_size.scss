@@ -1,0 +1,27 @@
+@for $i from 1 through 50 {
+  .fs-#{$i} { font-size: 0.1rem * $i; }
+}
+
+@media (min-width: 576px) {
+  @for $i from 1 through 50 {
+    .fs-sm-#{$i} { font-size: 0.1rem * $i; }
+  }
+}
+
+@media (min-width: 768px) {
+  @for $i from 1 through 50 {
+    .fs-md-#{$i} { font-size: 0.1rem * $i; }
+  }
+}
+
+@media (min-width: 992px) {
+  @for $i from 1 through 50 {
+    .fs-lg-#{$i} { font-size: 0.1rem * $i; }
+  }
+}
+
+@media (min-width: 1200px) {
+  @for $i from 1 through 50 {
+    .fs-xl-#{$i} { font-size: 0.1rem * $i; }
+  }
+}

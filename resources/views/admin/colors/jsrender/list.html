@@ -1,0 +1,33 @@
+<script id="render_list_container" type="text/x-jsrender">
+{{for data}}
+    <div class="col-6 col-md-4 col-xl-2 mb-4" data-id="{{>id}}">
+        <div class="list-group h-100 text-center">
+            <div class="list-group-item">
+                <div class="d-flex align-items-center">
+                    <span class="material-icons fs-12 action-btn drag mr-2">&#xe89f;</span>
+                    <strong class="border border-secondary px-1 fs-6">{{>color}}</strong>
+                    <span class="material-icons fs-12 action-btn ml-auto"
+                    data-json='{
+                    "modal": "#update",
+                    "index": "{{:#getIndex()}}",
+                    "headers": "Изменить цвет",
+                    "action": "update",
+                    "func": "colorPickerInit","args": "#color-picker"
+                    }'>&#xe3c9;</span>
+                    <span class="material-icons fs-12 action-btn ml-1"
+                    data-json='{
+                    "modal": "#delete",
+                    "index": "{{:#getIndex()}}",
+                    "headers": "Удаление",
+                    "action": "delete"
+                    }'>&#xe92b;</span>
+                </div>
+            </div>
+            <div class="list-group-item color_parent">
+                <div class="color_container" style="background: {{>color}};"></div>
+            </div>
+        </div>
+    </div>
+{{/for}}
+{{* initSortable();}}
+</script>

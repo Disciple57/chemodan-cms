@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Validator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Validator::extend('correct_mime_types', 'Correct@mimeTypes');
+        Validator::extend('correct_mime', 'Correct@mime');
+        Validator::extend('correct_svg_font', 'Correct@svgFont');
     }
 }
