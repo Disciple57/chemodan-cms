@@ -55,6 +55,17 @@ return [
             'visibility' => 'public',
         ],
 
+        'publish' => [
+            'driver' => 'local',
+            'root' => public_path(env('PUBLIC_PATH')),
+            'visibility' => 'public',
+        ],
+
+        'views' => [
+            'driver' => 'local',
+            'root' => resource_path('/views/'),
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

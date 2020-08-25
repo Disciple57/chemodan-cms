@@ -1,0 +1,8 @@
+.color_parent {
+    background: url('/app/admin/img/ches.svg');
+    height: 100px;
+}
+.color_container {
+    height: 100%;
+    width: 100%;
+}

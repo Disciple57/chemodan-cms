@@ -1,0 +1,32 @@
+<script id="render_list_container" type="text/x-jsrender">
+{{for data}}
+<link href="/app/fonts/{{>name}}/{{>name}}.css" rel="stylesheet">
+    <div class="col-12 mb-1" data-id="{{>id}}">
+        <div class="list-group h-100 text-center">
+            <div class="list-group-item">
+                <div class="d-flex align-items-center">
+                    <span class="material-icons fs-14 action-btn drag mr-2"
+                    data-json='{
+                    "modal": "#delete",
+                    "index": "{{:#getIndex()}}",
+                    "headers": "Удаление",
+                    "action": "delete",
+                    "id": "{{>id}}",
+                    "name": "{{>name}}"
+                    }'>&#xe92b;</span>
+                    <strong>{{>name}}</strong>
+                    <small class="ml-2 text-primary">(кол-во: {{>data.count}})</small>
+                </div>
+            </div>
+            <div class="list-group-item d-flex flex-wrap flex-row">
+                {{for data.icons sort="name" ~prefix=data.prefix}}
+                    <div class="mx-1 my-2 f-ico-contain">
+                        <div class="{{:~prefix}}{{>name}} fs-14"></div>
+                        <small>{{>name}}</small>
+                    </div>
+                {{/for}}
+            </div>
+        </div>
+    </div>
+{{/for}}
+</script>

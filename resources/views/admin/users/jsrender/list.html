@@ -1,0 +1,37 @@
+<script id="render_list_container" type="text/x-jsrender">
+{{for data}}
+    <div class="col-12 col-md-4 mb-1">
+        <div class="list-group h-100">
+            <div class="d-flex align-items-center list-group-item text {{if id === ~root.current_user.id}}bg-dark text-white{{/if}}">
+                 {{>name}}
+                 <span class="badge badge-secondary ml-1">{{>role}}</span>
+                 <span class="material-icons fs-14 action-btn ml-auto"
+               data-json='{
+               "id": "{{>id}}",
+               "index": "{{:#getIndex()}}",
+               "modal": "#update",
+               "headers": "Изменить данные пользователя",
+               "action": "update",
+               "extra": "--all"
+               }'>&#xe3c9;</span>
+
+               {{if id !== ~root.current_user.id && ~root.current_user.role !=='user'}}
+               <span class="material-icons fs-14 action-btn ml-1"
+               data-json='{
+               "id": "{{>id}}",
+               "index": "{{:#getIndex()}}",
+               "modal": "#delete",
+               "headers": "Удаление пользователя",
+               "action": "delete"
+               }'>&#xe92b;</span>
+               {{/if}}
+
+            </div>
+            <div class="list-group-item">
+                <strong>Дата регистрации:</strong> {{>created_at}}
+                {{if updated_at}}<small class="text-muted"> (Изменен {{>updated_at}})</small>{{/if}}
+            </div>
+        </div>
+    </div>
+{{/for}}
+</script>

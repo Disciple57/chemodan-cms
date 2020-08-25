@@ -1,0 +1,39 @@
+<script id="update" type="text/x-jsrender">
+<div class="modal-header">
+    <h5 class="modal-title">{{:~data_json.headers}}</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form id="form">
+    <div class="modal-body">
+        <div class="form-group text-center" id="color-picker" data-color="{{if color}}{{>color}}{{else}}#000000 {{/if}}">
+            <input type="name" id="color" class="form-control mb-1" name="color" value="{{>color}}" autocomplete="off">
+            <span class="invalid-feedback" role="alert"></span>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+        <button data-json='{"{{:~data_json.action}}": true, "id": "{{>id}}"}' type="submit" class="btn btn-primary send-form">Сохранить</button>
+    </div>
+</form>
+</script>
+<script id="delete" type="text/x-jsrender">
+<div class="modal-header">
+    <h5 class="modal-title">{{:~data_json.headers}}</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+    <div class="modal-body">
+            <p>Вы действительно хотите удалить этот цвет?</p>
+            <div class="list-group-item color_parent my-2">
+                <div class="color_container" style="background: {{>color}};"></div>
+            </div>
+            <p>Возможно он используется на страницах!</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Нет</button>
+        <button data-json='{"delete": true, "id": "{{>id}}"}' class="btn btn-primary">Да</button>
+    </div>
+</script>

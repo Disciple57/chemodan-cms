@@ -1,0 +1,7 @@
+@for $i from 1 through 24 {
+  .border-#{$i} {border: #{$i}px solid;}
+  .border-top-#{$i} {border-top: #{$i}px solid;}
+  .border-bottom-#{$i} {border-bottom: #{$i}px solid;}
+  .border-left-#{$i} {border-left: #{$i}px solid;}
+  .border-right-#{$i} {border-right: #{$i}px solid;}
+}

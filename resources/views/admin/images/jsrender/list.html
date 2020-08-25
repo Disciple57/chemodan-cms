@@ -1,0 +1,39 @@
+<script id="render_list_container" type="text/x-jsrender">
+{{for data}}
+    <div class="col-6 col-sm-4 col-xl-2 mb-1" data-id="{{>id}}">
+        <div class="list-group h-100 text-center">
+            <div class="list-group-item fs-10">
+                <div class="d-flex align-items-center">
+                    <span class="material-icons fs-14 action-btn drag mr-2">&#xe89f;</span>
+                    <strong class="fs-7">{{>name}}.{{>mime}}</strong>
+                    <span class="material-icons fs-14 action-btn ml-auto"
+                    data-json='{
+                    "modal": "#update",
+                    "headers": "Заменить изображение",
+                    "index": "{{:#getIndex()}}",
+                    "action": "update",
+                    "extra": "mimes"
+                    }'>&#xe39d;</span>
+                    <span class="material-icons fs-14 action-btn ml-1"
+                    data-json='{
+                    "modal": "#delete",
+                    "headers": "Удаление",
+                    "index": "{{:#getIndex()}}",
+                    "action": "delete"
+                    }'>&#xe92b;</span>
+                </div>
+            </div>
+            <div class="list-group-item img_parent">
+                <div class="img_container">
+                    <img class="fill" src="/app/img/{{>name}}.{{>mime}}?{{>updated}}">
+                </div>
+            </div>
+            <div class="list-group-item fs-7 text-secondary text-left">
+                <div>Размер: {{>(size/1024).toFixed(1)}} kb {{if info === '0'}}(vector){{else}}{{>info}} px{{/if}}</div>
+                <div>Загружено: {{>created_at}}</div>
+                </div>
+            </div>
+    </div>
+{{/for}}
+{{* initSortable();}}
+</script>

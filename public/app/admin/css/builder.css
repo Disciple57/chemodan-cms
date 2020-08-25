@@ -1,0 +1,298 @@
+@import "images.css";
+:root {
+    --constructor-border-color: #6c757d;
+    --constructor-border-color-invert: rgba(255, 255, 255, .8);
+    --constructor-border-color-hover: #ffa08a;
+    --constructor-bg-color: #dfdfdf;
+    --constructor-text-color: #6c757d;
+    --constructor-all-elements-distance-y: 1rem;
+    --constructor-all-elements-distance-x: 0.4rem
+}
+
+/** Панель конфигурации */
+#parent-tools-panel {
+    position: relative;
+}
+
+#parent-tools-panel .panel {
+    position: fixed;
+    right: 0;
+    z-index: 1500;
+    width: 20rem;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+}
+
+#parent-tools-panel .panel .panel-header {
+    background: #95999c;
+    padding: .5rem .5rem .5rem 1rem;
+    box-shadow: 0 3px 0 0 #95999c;
+    display: flex;
+}
+#parent-tools-panel .panel .panel-header [data-panel] {
+    color: #ffffff;
+    cursor: pointer;
+}
+#parent-tools-panel .panel .card-header
+{
+    cursor: pointer;
+    padding: .3rem 1rem;
+}
+#parent-tools-panel .panel .card-body {
+    padding: 1rem;
+}
+
+#parent-tools-panel .panel .form-control-extra-sm {
+    height: calc(1em + .5rem + 2px);
+    padding: 0 .5rem;
+    font-size: .8rem;
+    line-height: 1rem;
+    border-radius: .1rem;
+}
+#parent-tools-panel .panel [data-rel].active {
+    box-shadow: 0 0 0 3px var(--constructor-border-color-hover);
+}
+
+#parent-tools-panel .panel .form-control:focus {
+    background-color: unset;
+    box-shadow:none;
+    border-color: initial;
+}
+
+#parent-tools-panel .panel .icon-contain {
+    width: 7rem;
+}
+#parent-tools-panel .panel .icon-contain .icon {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#parent-tools-panel .panel .icon-select i,
+#parent-tools-panel .panel .image-select img,
+#parent-tools-panel .panel .img_parent {
+    cursor: pointer;
+}
+
+#parent-tools-panel .panel .bind-parent {
+    padding: 6px 10px;
+    background: #cccccc;
+}
+
+/** Поставщик */
+.nav-tabs .nav-link {
+    border-radius: unset;
+    margin-right:2px;
+}
+.nav-tabs .nav-link:focus {
+    outline: none;
+}
+.nav-tabs .nav-link.active {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--light);
+}
+.drag-elements-container .element-container {
+    display: block;
+}
+.drag-elements-container .element-container .drag-element {
+    display: none;
+}
+.drag-elements-container .preview {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: 6rem;
+    height: 3rem;
+    background-color: var(--constructor-bg-color);
+    font-size: .7rem;
+    margin: .1rem;
+    padding: .1rem;
+    cursor: pointer;
+}
+.drag-elements-container .preview img {
+    max-width: 100%;
+}
+
+/** Приемник */
+#editor {
+    margin-top: 1rem;
+}
+#editor.constructor {
+    min-height: 10rem;
+    padding-top: 2rem;
+    padding-bottom: var(--constructor-all-elements-distance-y);
+    padding-right: var(--constructor-all-elements-distance-y);
+    padding-left: var(--constructor-all-elements-distance-y);
+}
+
+#editor.constructor, #editor.constructor * {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#editor a{
+    padding: 0 1rem;
+    background: #bbffe7;
+}
+
+#editor.constructor:before, #editor.constructor *:not(.icon):before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 0 1px inset var(--constructor-border-color), 0 0 0 1px var(--constructor-border-color-invert);
+    content: "";
+}
+#editor.constructor:after, #editor.constructor *:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 0 1px inset var(--constructor-border-color), 1px 1px 0 0 var(--constructor-border-color-invert);
+    background-color: var(--constructor-bg-color);
+    color: var(--constructor-text-color);
+    text-transform: none;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: normal;
+    padding: 0 4px;
+    border-radius: 0 0 4px 0;
+}
+#editor.constructor:before, #editor.constructor:after {
+    box-shadow: none;
+    border: 4px dashed #ccc;
+    color: #ccc;
+    background-color: unset;
+    font-size: 1rem;
+    font-weight: bold;
+}
+#editor.constructor:after {
+    content: 'Drop';
+}
+#editor.constructor .container:after {
+    content: "Container";
+}
+#editor.constructor .container-sm:after {
+    content: "Container-sm";
+}
+#editor.constructor .container-md:after {
+    content: "Container-md";
+}
+#editor.constructor .container-lg:after {
+    content: "Container-lg";
+}
+#editor.constructor .container-xl:after {
+    content: "Container-xl";
+}
+#editor.constructor .container-fluid:after {
+    content: "Container-fluid";
+}
+#editor.constructor section:after {
+    content: "Section";
+}
+#editor.constructor .row:after {
+    content: "Row";
+}
+#editor.constructor [class*=col-]:after {
+    content: "col";
+}
+#editor.constructor .row:before {
+    padding-left: var(--constructor-all-elements-distance-x);
+    padding-right: var(--constructor-all-elements-distance-x);
+    background-image: url(/app/admin/img/column.svg);
+    background-size: 8.333333333333333% 4px;
+    background-repeat: repeat;
+    background-origin: content-box;
+    box-sizing: border-box;
+}
+#editor.constructor [hovered]::before {
+    box-shadow: 0 0 0 1px inset var(--constructor-border-color-hover), 0 0 0 1px var(--constructor-border-color-invert);
+}
+#editor.constructor [sel]::before {
+    box-shadow: 0 0 0 3px inset var(--constructor-border-color-hover), 0 0 0 2px var(--constructor-border-color-invert);
+}
+#editor.constructor [sel]::after {
+    box-shadow: 0 0 0 3px inset var(--constructor-border-color-hover);
+    color: var(--constructor-border-color-hover);
+}
+
+#editor.constructor .container,
+#editor.constructor [class*=container-],
+#editor.constructor section,
+#editor.constructor .row,
+#editor.constructor [class*=col-] {
+    min-height: 3rem;
+    padding-top: var(--constructor-all-elements-distance-y);
+    padding-bottom: var(--constructor-all-elements-distance-y);
+
+}
+#editor.constructor .row {
+    margin-left: var(--constructor-all-elements-distance-x);
+    margin-right: var(--constructor-all-elements-distance-x);
+    padding-left: var(--constructor-all-elements-distance-x);
+    padding-right: var(--constructor-all-elements-distance-x);
+}
+
+#editor.constructor .sortable-ghost {
+    opacity: .5;
+    min-width: 2rem;
+    min-height: 2rem;
+    box-shadow: none;
+    border: 1px dotted #ff0000;
+}
+
+#editor.constructor .sortable-ghost:before {
+    box-shadow: none;
+    border-radius: 0;
+}
+
+#editor.constructor .element-container .preview {
+    display: none;
+}
+
+#editor.constructor div.element-container,
+#editor.constructor div.element-container .drag-element {
+    display: block;
+}
+
+#editor.constructor span.element-container .drag-element {
+    display: inline;
+}
+
+#editor.constructor .element-container .drag-element:before {
+    box-shadow: none;
+}
+
+/* дисплей */
+#editor.constructor .d-none {
+    display: unset !important;
+    opacity: .2;
+}
+@media (min-width: 576px) {
+    #editor.constructor .d-sm-none {
+        display: unset !important;
+        opacity: .2;
+    }
+}
+@media (min-width: 768px) {
+    #editor.constructor .d-md-none {
+        display: unset !important;
+        opacity: .2;
+    }
+}
+@media (min-width: 992px) {
+    #editor.constructor .d-lg-none {
+        display: unset !important;
+        opacity: .2;
+    }
+}
+@media (min-width: 1200px) {
+    #editor.constructor .d-xl-none {
+        display: unset !important;
+        opacity: .2;
+    }
+}

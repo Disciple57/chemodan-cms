@@ -1,0 +1,110 @@
+<script id="update" type="text/x-jsrender">
+<div class="modal-header">
+    <h5 class="modal-title">{{:~data_json.headers}}</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form id="form">
+    <div class="modal-body">
+        <div class="form-group">
+            <input type="name" id="name" class="form-control" name="name"
+                   placeholder="Имя" value="{{>name}}" autocomplete="off">
+            <span class="invalid-feedback" role="alert"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-4">
+                <input type="name" class="form-control" name="height"
+                   placeholder="Высота слайдера" value="{{if settings && settings.height}}{{>settings.height}}{{/if}}" autocomplete="off">
+                <span class="invalid-feedback" role="alert"></span>
+            </div>
+            <div class="col-4">
+                <input type="name" class="form-control" name="pause"
+                   placeholder="Пауза" value="{{if settings && settings.pause}}{{>settings.pause}}{{/if}}" autocomplete="off">
+                <span class="invalid-feedback" role="alert"></span>
+            </div>
+            <div class="col-4">
+                <input type="name" class="form-control" name="speed"
+                   placeholder="Скорость прокрутки" value="{{if settings && settings.speed}}{{>settings.speed}}{{/if}}" autocomplete="off">
+                <span class="invalid-feedback" role="alert"></span>
+            </div>
+        </div>
+
+        <div class="form-group row border-top p-3">
+            <div class="col-12 text-muted mb-3"><strong>Режим прокрутки слайдов</strong></div>
+            <div class="col-4 form-check">
+                <input id="mode1" class="form-check-input" type="radio" name="mode" value="horizontal" checked>
+                <label class="form-check-label" for="mode1">Горизонтальный</label>
+            </div>
+            <div class="col-4 form-check">
+                <input id="mode2" class="form-check-input" type="radio" name="mode" value="vertical" {{if settings && settings.mode && settings.mode=="vertical"}}checked {{/if}}>
+                <label class="form-check-label" for="mode2">Вертикальный</label>
+            </div>
+            <div class="col-4 form-check">
+                <input id="mode3" class="form-check-input" type="radio" name="mode" value="fade" {{if settings && settings.mode && settings.mode=="fade"}}checked {{/if}}>
+                <label class="form-check-label" for="mode3">Затухание</label>
+            </div>
+        </div>
+
+        <div class="form-group row border-top p-3">
+            <div class="col-3 form-check">
+                <input id="controls" class="form-check-input" type="checkbox" name="controls" value="true" {{if settings && settings.controls}}checked {{/if}}>
+                <label class="form-check-label" for="controls">Элементы управления</label>
+            </div>
+            <div class="col-3 form-check">
+                <input id="auto" class="form-check-input" type="checkbox" name="auto" value="true" {{if settings && settings.auto}}checked {{/if}}>
+                <label class="form-check-label" for="auto">Автостарт</label>
+            </div>
+            <div class="col-3 form-check">
+                <input id="adaptiveHeight" class="form-check-input" type="checkbox" name="adaptiveHeight" value="true" {{if settings && settings.adaptiveHeight}}checked {{/if}}>
+                <label class="form-check-label" for="adaptiveHeight">Динамическая высота</label>
+            </div>
+            <div class="col-3 form-check">
+                <input id="pager" class="form-check-input" type="checkbox" name="pager" value="true" {{if settings && settings.pager}}checked {{/if}}>
+                <label class="form-check-label" for="pager">Пейджер</label>
+            </div>
+        </div>
+        <div class="form-group row border-top p-3">
+            <div class="col-12 text-muted mb-3"><strong>Режим сенсорных экранов</strong></div>
+            <div class="col-3 form-check">
+                <input id="touchEnabled" class="form-check-input" type="checkbox" name="touchEnabled" value="true" {{if settings && settings.touchEnabled}}checked {{/if}}>
+                <label class="form-check-label" for="touchEnabled">Листание пальцем</label>
+            </div>
+            <div class="col-3 form-check">
+                <input id="oneToOneTouch" class="form-check-input" type="checkbox" name="oneToOneTouch" value="true" {{if settings && settings.oneToOneTouch}}checked {{/if}}>
+                <label class="form-check-label" for="oneToOneTouch">Следование за пальцем</label>
+            </div>
+            <div class="col-3 form-check">
+                <input id="preventDefaultSwipeX" class="form-check-input" type="checkbox" name="preventDefaultSwipeX" value="true" {{if settings && settings.preventDefaultSwipeX}}checked {{/if}}>
+                <label class="form-check-label" for="preventDefaultSwipeX">Блокировка по оси X</label>
+            </div>
+            <div class="col-3 form-check">
+                <input id="preventDefaultSwipeY" class="form-check-input" type="checkbox" name="preventDefaultSwipeY" value="true" {{if settings && settings.preventDefaultSwipeY}}checked {{/if}}>
+                <label class="form-check-label" for="preventDefaultSwipeY">Блокировка по оси Y</label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+        <button data-json='{"{{:~data_json.action}}": true, "id": "{{>id}}"}' type="submit" class="btn btn-primary send-form">
+            Сохранить
+        </button>
+    </div>
+</form>
+</script>
+
+<script id="delete" type="text/x-jsrender">
+<div class="modal-header">
+    <h5 class="modal-title">{{:~data_json.headers}}</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+    <div class="modal-body">
+            Вы действительно хотите удалить слайдер <strong>"{{:~data_json.name}}"</strong>?
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Нет</button>
+        <button data-json='{"delete": true, "id": "{{:~data_json.id}}"}' class="btn btn-primary">Да</button>
+    </div>
+</script>

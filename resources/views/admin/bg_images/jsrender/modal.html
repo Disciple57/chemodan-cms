@@ -1,0 +1,120 @@
+<script id="update" type="text/x-jsrender">
+<div class="modal-header">
+    <h5 class="modal-title">{{:~data_json.headers}}</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form id="form">
+
+    <div class="modal-body">
+        <div class="form-group img-list row">
+        {{for ~data_json._extra }}
+            <div class="col-xl-2 col-md-4 col-sm-6">
+            <div class="img_parent">
+                <input class="d-none" type="radio" name="id_image" value="{{>id}}" id="bg-img-{{>id}}" {{if #index == 0 || ~root.id_image == id}}checked{{/if}}>
+                <label for="bg-img-{{>id}}" class="img_container">
+                    <img class="fill" src="/app/img/{{>name}}.{{>mime}}?{{>updated}}">
+                </label>
+            </div>
+            </div>
+        {{/for}}
+        </div>
+        <span class="invalid-feedback" role="alert" data-error="id_image"></span>
+        <div class="form-group row border-top pt-3">
+            <div class="pt-2 pl-5">
+                <input id="repeat" class="form-check-input" type="checkbox" name="repeat" value="1" {{if options && options.repeat}}checked{{/if}}>
+                <label class="form-check-label" for="repeat">Повтор</label>
+            </div>
+        </div>
+        <div class="opts">
+            <div class="form-group row text-center border-top pt-3">
+                <div class="col-12 text-muted mb-3"><strong>Размер</strong></div>
+                <div class="col-3">
+                    <div class="form-row">
+                        <div class="col-2 text-right pt-1">
+                            <input id="external" class="form-check-input" type="radio" name="background_size" value="external" {{if options && options.background_size === 'external'}}checked{{/if}}>
+                        </div>
+                        <div class="col-6">
+                            <input id="external_size" class="form-control form-control-sm" type="text" name="size" value="{{if options && options.size}}{{>options.size}}{{/if}}" placeholder="Размер" disabled>
+                        </div>
+                        <div class="col-4">
+                            <select class="form-control form-control-sm" name="unit" disabled>
+                                <option selected>px</option>
+                                <option {{if options && options.unit === '%'}}selected{{/if}}>%</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 pt-1">
+                    <input id="auto" class="form-check-input" type="radio" name="background_size" value="auto" {{if !options || options && options.background_size === 'auto' || !options.background_size}}checked{{/if}}>
+                    <label class="form-check-label" for="auto">По умолчанию</label>
+                </div>
+                <div class="col-3 pt-1">
+                    <input id="cover" class="form-check-input" type="radio" name="background_size" value="cover" {{if options && options.background_size === 'cover'}}checked{{/if}}>
+                    <label class="form-check-label" for="cover">По ширине или высоте блока (cover)</label>
+                </div>
+                <div class="col-3 pt-1">
+                    <input id="contain" class="form-check-input" type="radio" name="background_size" value="contain" {{if options && options.background_size === 'contain'}}checked{{/if}}>
+                    <label class="form-check-label" for="contain">Целиком внутри блока (contain)</label>
+                </div>
+            </div>
+            <div class="form-group row text-center border-top pt-3">
+                <div class="col-12 text-muted mb-3"><strong>Выравнивание по сторонам</strong></div>
+                <div class="col-6 mb-3 text-muted"><strong>По горизонтали</strong></div>
+                <div class="col-6 mb-3 text-muted"><strong>По вертикали</strong></div>
+                <div class="col-2">
+                    <input id="horizontal_left" class="form-check-input" type="radio" name="position_x" value="left" {{if options && options.position_x === 'left'}}checked{{/if}}>
+                    <label class="form-check-label" for="horizontal_left">Лево</label>
+                </div>
+                <div class="col-2">
+                    <input id="horizontal_center" class="form-check-input" type="radio" name="position_x" value="center" {{if !options || options && options.position_x === 'center' || !options.position_x}}checked{{/if}}>
+                    <label class="form-check-label" for="horizontal_center">Центр</label>
+                </div>
+                <div class="col-2 border-right">
+                    <input id="horizontal_right" class="form-check-input" type="radio" name="position_x" value="right" {{if options && options.position_x === 'right'}}checked{{/if}}>
+                    <label class="form-check-label" for="horizontal_right">Право</label>
+                </div>
+                <div class="col-2">
+                    <input id="vertical_top" class="form-check-input" type="radio" name="position_y" value="top" {{if options && options.position_y === 'top'}}checked{{/if}}>
+                    <label class="form-check-label" for="vertical_top">Верх</label>
+                </div>
+                <div class="col-2">
+                    <input id="vertical_center" class="form-check-input" type="radio" name="position_y" value="center" {{if !options || options && options.position_y === 'center' || !options.position_y}}checked{{/if}}>
+                    <label class="form-check-label" for="vertical_center">Центр</label>
+                </div>
+                <div class="col-2">
+                    <input id="vertical_bottom" class="form-check-input" type="radio" name="position_y" value="bottom" {{if options && options.position_y === 'bottom'}}checked{{/if}}>
+                    <label class="form-check-label" for="vertical_bottom">Низ</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+        <button data-json='{"{{:~data_json.action}}": true, "id": "{{>id}}"}' type="submit" class="btn btn-primary send-form">Сохранить</button>
+    </div>
+</form>
+</script>
+
+<script id="delete" type="text/x-jsrender">
+<div class="modal-header">
+    <h5 class="modal-title">{{:~data_json.headers}}</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+    <div class="modal-body">
+            Вы действительно хотите удалить этот фон из набора?
+            <div class="list-group-item img_parent">
+                <div class="img_container">
+                    <img class="fill" src="/app/img/{{>file}}?{{>updated}}">
+                </div>
+            </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Нет</button>
+        <button data-json='{"delete": true, "id": "{{>id}}"}' class="btn btn-primary">Да</button>
+    </div>
+
+</script>

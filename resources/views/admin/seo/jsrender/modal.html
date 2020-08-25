@@ -1,0 +1,84 @@
+<script id="update" type="text/x-jsrender">
+<div class="modal-header">
+    <h5 class="modal-title">{{:~data_json.headers}}</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form id="form">
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="title">Заголовок (title)</label>
+            <textarea class="form-control" name="title">{{if meta}}{{>meta.title}}{{/if}}</textarea>
+            <span class="invalid-feedback" role="alert"></span>
+        </div>
+        <div class="form-group">
+            <label for="description">Краткое содержание (description)</label>
+            <textarea class="form-control" name="description">{{if meta}}{{>meta.description}}{{/if}}</textarea>
+            <span class="invalid-feedback" role="alert"></span>
+        </div>
+        <div class="form-group">
+            <label for="extra">Произвольные мета-теги</label>
+            <textarea data-id="html" class="d-none" name="extra">{{if meta}}{{>meta.extra}}{{/if}}</textarea>
+            <span class="invalid-feedback" role="alert"></span>
+        </div>
+        <div class="border-top"></div>
+
+        <h5>Open Graph</h5>
+
+        <div class="form-group">
+            <label for="og_title">Заголовок (og:title)</label>
+            <textarea class="form-control" name="og_title">{{if meta}}{{>meta.og_title}}{{/if}}</textarea>
+            <span class="invalid-feedback" role="alert"></span>
+        </div>
+        <div class="form-group">
+            <label for="description">Краткое содержание (og:description)</label>
+            <textarea class="form-control" name="og_description">{{if meta}}{{>meta.og_description}}{{/if}}</textarea>
+            <span class="invalid-feedback" role="alert"></span>
+        </div>
+        <div class="form-group">
+            <label for="description">Изображение (og:image)</label>
+            <select name="og_image" class="selectpicker" data-width="100%">
+                <option value="">Нет</option>
+            {{for ~data_json._extra}}
+                <option data-content='
+                    <div class="d-flex align-items-center row">
+                        <div class="col-4">
+                            {{>name}}.{{>mime}}
+                        </div>
+                        <div class="col-4 fs-6">
+                            Размер: {{>(size/1024).toFixed(1)}} kb ({{>info}} px)
+                        </div>
+                        <div class="col-4 text-right">
+                            <img class="fill" src="/app/img/{{>name}}.{{>mime}}">
+                        </div>
+                    </div>
+                '{{if ~root.meta.og_image == (name + '.' + mime)}} selected{{/if}}>{{>name}}.{{>mime}}</option>
+            {{/for}}
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+        <button data-json='{"{{:~data_json.action}}": true, "id": "{{>id}}"}' type="submit" class="btn btn-primary send-form">Сохранить</button>
+    </div>
+</form>
+{{* aceInit(); }}
+{{* selectpickerInit();}}
+</script>
+
+<script id="delete" type="text/x-jsrender">
+<div class="modal-header">
+    <h5 class="modal-title">{{>headers}}</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+    <div class="modal-body">
+            Вы действительно хотите удалить <strong>"{{>name}}"</strong>?
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Нет</button>
+        <button data-json='{"delete": true, "id": "{{>id}}"}' class="btn btn-primary">Да</button>
+    </div>
+</script>
