@@ -38,9 +38,11 @@ $ composer install
 $ php artisan migrate
 ```
 
-Доступ к панели - http://[адрес]/admin 
+Доступ к панели - http://[сайт]/admin 
 
 При желании можно изменить параметр ADMIN_PANEL_URI в файле .env
+
+Логин/пароль: superadmin
 
 [Laravel]: <https://laravel.com/>
 [Twitter Bootstrap]: <https://getbootstrap.com/>
