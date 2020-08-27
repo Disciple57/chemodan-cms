@@ -1,6 +1,6 @@
 # Чемодан CMS
 
-Простая система управление сайтом.
+Простая система управление сайтом, ориентированная в первую очередь на разработчиков.
 
 [MIT license](https://opensource.org/licenses/MIT).
 
@@ -9,26 +9,40 @@
 CMS включает в себя ряд проектов с открытым исходным кодом:
 
 * [Laravel] - v 6.14.0
-* [Twitter Bootstrap] - v4.4.1
+* [Twitter Bootstrap]
 * [jQuery]
-* [jQuery-ui]
 * [JsRender]
-
-*И другие библиотеки*
-
-
 
 ## Установка
 
-**На VirtualBox**
-
-Распаковать содержание папки **shop-msk** в корневую директорию проекта
+Распаковать содержание папки **chemodan-cms** в корневую директорию проекта
 
 ```sh
-git clone https://github.com/Disciple57/shop-msk.git ./
+$ git clone https://github.com/Disciple57/shop-msk.git ./
 ```
 
 Выполнить
 ```sh
-composer install
+$ composer install
 ```
+
+Изменить значения атрибутов в файле .env в соответствии со своими настройками mySql
+
+- DB_DATABASE
+- DB_USERNAME
+- DB_PASSWORD
+
+Выполнить
+
+```sh
+$ php artisan migrate
+```
+
+Доступ к панели - http://[адрес]/admin 
+
+При желании можно изменить параметр ADMIN_PANEL_URI в файле .env
+
+[Laravel]: <https://laravel.com/>
+[Twitter Bootstrap]: <https://getbootstrap.com/>
+[jQuery]: <https://jquery.com/>
+[JsRender]: <https://www.jsviews.com/>
