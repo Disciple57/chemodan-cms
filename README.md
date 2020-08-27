@@ -26,23 +26,23 @@ $ git clone https://github.com/Disciple57/shop-msk.git ./
 $ composer install
 ```
 
-Изменить значения атрибутов в файле .env в соответствии со своими настройками mySql
-
-- DB_DATABASE
-- DB_USERNAME
-- DB_PASSWORD
-
+Добавить атрибуты в файл .env
+```sh
+ADMIN_PANEL_URI=admin
+FILESYSTEM_DRIVER=publish
+PUBLIC_PATH=app
+```
 Выполнить
 
 ```sh
-$ php artisan migrate
+$ php artisan migrate --seed
 ```
 
 Доступ к панели - http://[сайт]/admin 
 
 При желании можно изменить параметр ADMIN_PANEL_URI в файле .env
 
-Логин/пароль: superadmin
+Логин/пароль: **superadmin**
 
 [Laravel]: <https://laravel.com/>
 [Twitter Bootstrap]: <https://getbootstrap.com/>
