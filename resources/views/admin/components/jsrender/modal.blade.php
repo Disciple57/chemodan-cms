@@ -19,7 +19,7 @@
         </div>
         <div class="form-group">
             <label for="html">HTML</label>
-            <a class="material-icons no-decor ml-2" href="{{route('components.index')}}/builder/@{{>id}}">&#xe869;</a>
+            @{{if id}}<a class="material-icons no-decor ml-2" href="{{route('components.index')}}/builder/@{{>id}}">&#xe869;</a>@{{/if}}
             <textarea data-id="html" class="d-none" name="html">@{{>html}}</textarea>
             <span class="invalid-feedback" role="alert"></span>
         </div>
