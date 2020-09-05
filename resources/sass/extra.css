@@ -1,7 +1,14 @@
+html, body {
+    height: 100%;
+}
 .no-decor,
 .no-decor a,
 .no-decor:hover ,
 .no-decor a:hover {
     text-decoration: none;
     color: inherit;
+}
+
+.parent {
+    min-height: 100%;
 }
