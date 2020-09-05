@@ -1,5 +1,8 @@
 @extends('admin.layout')
-
+@push('extra_resource')
+    <script src="/app/admin/js/common.js"></script>
+    <script>const VIEW_ONLY = true;</script>
+@endpush
 @section('content')
     <div class="container-fluid text-dark my-4">
         <div class="row justify-content-center text-center">

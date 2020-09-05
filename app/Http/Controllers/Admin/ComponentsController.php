@@ -7,10 +7,16 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ComponentsRequest;
 use Illuminate\Support\Facades\Storage;
 use App\Constants\{
-    StorageDirectory, NotificationCode as Code, NotificationMsg
+    ResourceTypes, StorageDirectory, NotificationCode as Code, NotificationMsg, Type
 };
 use Illuminate\Validation\Rule;
-use App\Model\Admin\Components;
+use App\Model\Pages;
+use App\Model\Admin\{
+    Colors, Fonts, Images, Bgimages, Components
+};
+use App\Http\Resources\Admin\{
+    Images as ImagesResource, Bgimages as BgimagesResource, FontIcons as FontIconsResource
+};
 
 class ComponentsController extends Controller
 {
@@ -195,5 +201,64 @@ class ComponentsController extends Controller
             }
             return response(['notification' => NotificationMsg::COMPONENTS[Code::SORTING]]);
         }
+    }
+
+    /**
+     * Режим билдера
+     *
+     * @param int $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function builder(int $id)
+    {
+        $component = Components::findOrFail($id)->toArray();
+        $patch = StorageDirectory::COMPONENTS . DIRECTORY_SEPARATOR . $component['filename'] . DIRECTORY_SEPARATOR . $component['filename'];
+        $html = '';
+        if ($component['html'] != null && Storage::exists($patch . '.html')) {
+            $html = Storage::get($patch . '.html');
+        }
+
+        return view('admin.builder.index', [
+            'resource' => ResourceTypes::COMPONENTS,
+            'id_resource' => $id,
+            'id' => $id,
+            'name' => $component['name'],
+            'html' => $html,
+            'pages' => Pages::all()->toArray(),
+            'colors' => Colors::all('id', 'color')->toArray(),
+            'fonts' => Fonts::where('type', Type::FONT_DEFAULT)->get('name')->toArray(),
+            'font_icons' => FontIconsResource::collection(Fonts::all()->where('type', Type::FONT_ICONS))->resolve(),
+            'images' => ImagesResource::collection(Images::all())->resolve(),
+            'bg_images' => BgimagesResource::collection(Bgimages::all())->resolve()
+        ]);
+    }
+
+    /**
+     * Обновление html из режима билдер
+     *
+     * @param Request $request
+     * @param int $id
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     */
+    public function htmlUpdate(Request $request, int $id) {
+        $component = Components::findOrFail($id);
+        $component->html = $request->html ? true : null;
+        if ($component->update()) {
+
+            $patch = StorageDirectory::COMPONENTS . DIRECTORY_SEPARATOR . $component->filename . DIRECTORY_SEPARATOR . $component->filename;
+
+            if ($request->html) {
+                Storage::put($patch . '.html', $request->html);
+            } else if (Storage::exists($patch . '.html')) {
+                Storage::delete($patch . '.html');
+            }
+
+            return response([
+                'notification' => NotificationMsg::COMPONENTS[Code::UPDATE],
+                'redirect' => route('components.index')
+            ]);
+        }
+
+        return response(['error'], 401);
     }
 }

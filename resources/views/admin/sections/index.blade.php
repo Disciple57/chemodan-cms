@@ -68,12 +68,6 @@
                     style="display: none;">
                 <i class="material-icons">&#xe161;</i> Сохранить порядок сортировки
             </button>
-            <button class="btn btn-sm btn-primary ml-auto" data-json='{
-            "request": true,
-            "url": "{{route('pages.generate_all')}}",
-            "type": "POST"}'>
-                <i class="material-icons">&#xe627;</i> Запустить пересборку страниц
-            </button>
         </div>
     </div>
 

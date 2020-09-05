@@ -24,12 +24,6 @@
             "action": "store"}'>
                 <i class="material-icons">&#xe148;</i> Создать слайдер
             </button>
-            <button class="btn btn-sm btn-primary ml-auto" data-json='{
-            "request": true,
-            "url": "{{route('pages.generate_all')}}",
-            "type": "POST"}'>
-                <i class="material-icons">&#xe627;</i> Запустить пересборку страниц
-            </button>
 
         </div>
         <div id="list-container" class="row mt-3 align-items-center"></div>

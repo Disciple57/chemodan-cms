@@ -13,10 +13,5 @@
 <div class="d-flex flex-column parent">
   @yield('content')
 </div>
-<div class="modal-menu">
-    <div class="left-cell">
-        <div class="links text-center"></div>
-    </div>
-</div>
 </body>
 </html>

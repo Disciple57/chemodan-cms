@@ -14,7 +14,6 @@
 
 @section('content')
     <script>
-        const URL = '{{route('sections.index')}}/{{$resource}}/{{$id_resource}}';
         const VIEW_ONLY = true;
         const FONT_ICONS = @json($font_icons);
     </script>
@@ -30,11 +29,25 @@
                 <li class="breadcrumb-item">
                     <a href="{{route('sliders.index')}}/{{$resource}}/{{$id_resource}}">{{$name}}</a>
                 </li>
+                <script>
+                    const URL = '{{route('sections.index')}}/{{$resource}}/{{$id_resource}}';
+                </script>
                 @break
                 @case ($ResourceTypes::PAGES)
                 <li class="breadcrumb-item">
                     <a href="{{route('sections.index')}}/{{$resource}}/{{$id_resource}}">{{$name}}</a>
                 </li>
+                <script>
+                    const URL = '{{route('sections.index')}}/{{$resource}}/{{$id_resource}}';
+                </script>
+                @break
+                @case ($ResourceTypes::COMPONENTS)
+                <li class="breadcrumb-item mr-2">
+                    <a href="{{route('components.index')}}">Компоненты</a> -> {{$name}}
+                </li>
+                <script>
+                    const URL = '{{route('components.index')}}/builder';
+                </script>
                 @break
             @endswitch
             <li class="breadcrumb-item active"><i class="material-icons">&#xe869;</i> Билдер</li>

@@ -47,6 +47,8 @@ Route::middleware(['auth', 'web'])->group(function () {
 
     Route::resource('components', 'ComponentsController');
     Route::post('components/sortable', 'ComponentsController@sortable')->name('components.sortable');
+    Route::get('components/builder/{id}', 'ComponentsController@builder')->where(['id' => '[0-9]+']);
+    Route::put('components/builder/{id}', 'ComponentsController@htmlUpdate')->where(['id' => '[0-9]+']);
 
     Route::resource('sliders', 'SlidersController');
 });

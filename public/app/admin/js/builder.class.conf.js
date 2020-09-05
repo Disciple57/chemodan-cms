@@ -1,12 +1,12 @@
 var class_conf = {
     'section': ['height', 'align', 'flex-align', 'font', 'padding', 'margin', 'background', 'display', 'border'],
     'container': ['container{breakpoint}', 'height', 'align', 'flex-align', 'font', 'padding', 'margin', 'background', 'display', 'border'],
-    'row': ['gutters', 'align', 'flex-align', 'background'],
+    'row': ['gutters', 'align', 'flex-align', 'background', 'display'],
     'col-{breakpoint}': ['col{breakpoint}', 'align', 'flex-align', 'font', 'padding', 'margin', 'background', 'display', 'border'],
-    'content': ['align', 'font', 'padding', 'margin', 'border'],
+    'content': ['align', 'font', 'padding', 'margin', 'border', 'animate'],
     'link': ['href', 'align', 'font', 'padding', 'margin', 'border'],
-    'icon': ['icon', 'margin'],
-    'img': ['image', 'height']
+    'icon': ['icon', 'margin', 'animate'],
+    'img': ['image', 'height', 'margin', 'animate']
 }, breakpoints = ['sm', 'md', 'lg', 'xl'];
 
 // container

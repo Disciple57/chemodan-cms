@@ -1,5 +1,8 @@
-html, body {
-    min-height:100vh;
+html {
+    height:100%;
+}
+body {
+    min-height:100%;
 }
 
 .no-border,
@@ -47,3 +50,6 @@ html, body {
     display: none;
 }
 
+.vh-100 {
+    min-height:100vh;
+}

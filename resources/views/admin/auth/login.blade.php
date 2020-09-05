@@ -1,8 +1,8 @@
 @extends('admin.layout')
 
 @section('content')
-    <div class="container h-100 text-dark">
-        <div class="row h-100 wow fadeIn">
+    <div class="container vh-100 text-dark">
+        <div class="row vh-100 wow fadeIn">
             <div class="col-6 col-lg-3 m-auto text-center wow zoomIn" data-wow-duration="0.5s">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf

@@ -1,27 +1,32 @@
 @for $i from 1 through 50 {
-  .ht-#{$i} { min-height: 1rem * $i ; }
+  .min-ht-#{$i} { min-height: #{$i}rem ; }
+  .max-ht-#{$i} { max-height: #{$i}rem ; }
 }
 
 @media (min-width: 576px) {
   @for $i from 1 through 50 {
-    .ht-sm-#{$i} { min-height: 1rem * $i ; }
+    .min-ht-sm-#{$i} { min-height: #{$i}rem ; }
+    .max-ht-sm-#{$i} { max-height: #{$i}rem ; }
   }
 }
 
 @media (min-width: 768px) {
   @for $i from 1 through 50 {
-    .ht-md-#{$i} { min-height: 1rem * $i ; }
+    .min-ht-md-#{$i} { min-height: #{$i}rem ; }
+    .max-ht-md-#{$i} { max-height: #{$i}rem ; }
   }
 }
 
 @media (min-width: 992px) {
   @for $i from 1 through 50 {
-    .ht-lg-#{$i} { min-height: 1rem * $i ; }
+    .min-ht-lg-#{$i} { min-height: #{$i}rem ; }
+    .max-ht-lg-#{$i} { max-height: #{$i}rem ; }
   }
 }
 
 @media (min-width: 1200px) {
   @for $i from 1 through 50 {
-    .ht-xl-#{$i} { min-height: 1rem * $i ; }
+    .min-ht-xl-#{$i} { min-height: #{$i}rem ; }
+    .max-ht-xl-#{$i} { max-height: #{$i}rem ; }
   }
 }

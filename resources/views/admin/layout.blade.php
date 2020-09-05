@@ -13,7 +13,13 @@
 @auth
     <div class="d-flex align-items-center bg-dark text-light">
         <img src="/app/admin/img/logo.svg">
-        <i class="material-icons fs-20 ml-auto">&#xe853;</i>
+        <button class="btn btn-sm btn-outline-light ml-auto" data-json='{
+            "request": true,
+            "url": "{{route('pages.generate_all')}}",
+            "type": "POST"}'>
+            <i class="material-icons">&#xe627;</i> Компиляция страниц
+        </button>
+        <i class="material-icons fs-20 ml-5">&#xe853;</i>
         <span class="ml-2 text-capitalize">
     {{ Auth::user()->name }}
     </span>
