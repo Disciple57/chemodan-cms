@@ -133,7 +133,8 @@
     margin-bottom: 1rem;
 }
 
-#editor a{
+#editor a {
+    display: inline-block;
     padding: 0 1rem;
     background: #bbffe7;
 }
