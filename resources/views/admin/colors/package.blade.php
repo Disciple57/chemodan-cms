@@ -8,4 +8,7 @@
 .border-color{{$color['id']}} {
     border-color: {{$color['color']}} !important;
 }
+.hover-color{{$color['id']}}:hover {
+    color: {{$color['color']}};
+}
 @endforeach

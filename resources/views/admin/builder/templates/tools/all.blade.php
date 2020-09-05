@@ -963,6 +963,34 @@
             <small>Title</small>
             <input id="title" type="text" class="form-control form-control-extra-sm">
         </div>
+        <div class="col-12 mt-3">
+            <div data-rels class="d-flex align-items-center">
+                <input type="checkbox" data-rel="no-decor">
+                <span class="ml-1">Отменить подчеркивание</span>
+            </div>
+        </div>
+        @if (!empty($colors))
+            <div class="col-6 mt-2 a-hover-color-selects">
+                <small>Цвет при наведении</small>
+                <select data-rels class="form-control form-control-extra-sm a-hover-color-select">
+                    <option data-rel="" selected>По умолчанию</option>
+                    @foreach ($colors as $color)
+                        <option class="background-color{{$color['id']}} color{{$color['id']}}"
+                                data-rel="hover-color{{$color['id']}}">{{$color['color']}}</option>
+                    @endforeach
+                </select>
+                <script>
+                    $select = $('.a-hover-color-selects').find('.a-hover-color-select');
+                    $select_class = $select.attr('class');
+                    $option_selected_class = $select.find(':selected').attr('class');
+                    $select.addClass($option_selected_class);
+                    $select.change(function () {
+                        $new_class = $(this).find(':selected').attr('class');
+                        $select.attr('class', $select_class).addClass($new_class).blur();
+                    });
+                </script>
+            </div>
+        @endif
     </div>
     <script>
         $('[data-href="/index"]').attr('data-href', '/');
