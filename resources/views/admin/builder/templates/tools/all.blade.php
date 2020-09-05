@@ -889,7 +889,7 @@
                 </div>
             </div>
             <div class="col-12">
-                <div class="border p-1 text-center fs-40 image-select" data-toggle="modal"
+                <div class="border p-1 text-center fs-40 img_parent image-select" data-toggle="modal"
                      data-target="#image-select-modal">
                     <img class="img-fluid" src="/app/admin/img/builder/image.png">
                 </div>

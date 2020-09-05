@@ -318,6 +318,7 @@ $(function () {
     }).on('click', '#editor.content-edit a', function (e) {
         e.preventDefault();
         if (!$(this).attr('contenteditable')) {
+            $(this).html($.trim($(this).html()));
             $(this).prop('contenteditable', 'true').focus().one('blur', function () {
                 $(this).removeAttr('contenteditable');
             });
@@ -325,6 +326,7 @@ $(function () {
 
     }).on('click', '#editor.content-edit .content', function () {
         if (!$(this).attr('contenteditable')) {
+            $(this).html($.trim($(this).html()));
             $(this).prop('contenteditable', 'plaintext-only').focus().one('blur', function () {
                 $(this).removeAttr('contenteditable');
             });

@@ -267,6 +267,10 @@
     box-shadow: none;
 }
 
+#editor.content-edit [contenteditable] {
+    text-transform: none !important;
+}
+
 /* дисплей */
 #editor.constructor .d-none {
     display: unset !important;
