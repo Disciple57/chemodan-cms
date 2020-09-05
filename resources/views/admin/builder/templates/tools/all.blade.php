@@ -966,7 +966,7 @@
         <div class="col-12 mt-3">
             <div data-rels class="d-flex align-items-center">
                 <input type="checkbox" data-rel="no-decor">
-                <span class="ml-1">Отменить подчеркивание</span>
+                <span class="ml-1">Отменить базовое оформление</span>
             </div>
         </div>
         @if (!empty($colors))
