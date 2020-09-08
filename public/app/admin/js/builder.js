@@ -137,8 +137,25 @@ $(function () {
                     'class': 'form-control form-control-extra-sm',
                     'value': $_this_selected.attr('class')
                 }).bind('input', function () {
-                    //Бинд инпута с выбранным элементом
+                    // Бинд инпута с выбранным элементом (присвоение класса)
                     $_this_selected.prop('class', $(this).val());
+                })).append($('<small/>', {
+                    'text': 'ID'
+            })).append(
+                $('<input/>', {
+                    'type': 'text',
+                    'class': 'form-control form-control-extra-sm',
+                    'value': $_this_selected.attr('id')
+                }).bind('input', function () {
+                    // Бинд инпута с выбранным элементом (присвоение id)
+                    txt = $(this).val().replace(/\s/g, '');
+                    if (txt) {
+                        $(this).val(txt)
+                        $_this_selected.prop('id', txt);
+                    } else {
+                        $_this_selected.removeAttr('id');
+                    }
+
                 })).appendTo($panel_body);
 
             observMutation();

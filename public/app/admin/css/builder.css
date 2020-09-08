@@ -136,6 +136,8 @@
 #editor a {
     display: inline-block;
     padding: 0 1rem;
+}
+#editor a:not([class*=background-color]) {
     background: #bbffe7;
 }
 

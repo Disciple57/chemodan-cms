@@ -4,7 +4,7 @@ var class_conf = {
     'row': ['gutters', 'align', 'flex-align', 'background', 'display', 'animate'],
     'col-{breakpoint}': ['col{breakpoint}', 'align', 'flex-align', 'font', 'padding', 'margin', 'background', 'display', 'border', 'animate'],
     'content': ['align', 'font', 'padding', 'margin', 'border', 'animate'],
-    'link': ['href', 'align', 'font', 'padding', 'margin', 'border', 'animate'],
+    'link': ['href', 'align', 'font', 'padding', 'margin', 'border', 'background', 'animate'],
     'icon': ['icon', 'margin', 'animate'],
     'img': ['image', 'height', 'margin', 'animate']
 }, breakpoints = ['sm', 'md', 'lg', 'xl'];
