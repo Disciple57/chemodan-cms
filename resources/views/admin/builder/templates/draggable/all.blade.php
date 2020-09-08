@@ -316,7 +316,7 @@
                         <p>Список</p>
                     </div>
                     <div class="drag-element">
-                        <ul>
+                        <ul class="section">
                             <li class="content">текст</li>
                             <li class="content">текст</li>
                             <li class="content">текст</li>

@@ -16,22 +16,6 @@
     </nav>
     <div class="container-fluid">
         <div class="d-flex align-items-center">
-            <div class="dropdown">
-                <button class="btn btn-outline-secondary btn-sm mr-1 dropdown-toggle" data-toggle="dropdown">Базовый набор компонентов</button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{route('fonts.index')}}"><i class="material-icons">&#xe165;</i> Шрифты</a>
-                    <a class="dropdown-item" href="{{route('colors.index')}}"><i class="material-icons">&#xe40a;</i> Цвет</a>
-                    <a class="dropdown-item" href="{{route('images.index')}}"><i class="material-icons">&#xe3f4;</i> Изображения</a>
-                    <a class="dropdown-item" href="{{route('components.index')}}"><i class="material-icons">&#xe86f;</i> Компоненты</a>
-                    <a class="dropdown-item" href="{{route('seo.index',[\App\Constants\ResourceTypes::PAGES])}}"><i class="material-icons">&#xe8a0;</i> СЕО</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <button class="btn btn-outline-secondary btn-sm mr-1 dropdown-toggle" data-toggle="dropdown"><i class="material-icons">&#xe63c;</i> Дополнительные модули</button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{route('sliders.index')}}"><i class="material-icons">&#xe41b;</i> Слайдер</a>
-                </div>
-            </div>
             <button class="btn btn-sm btn-success mr-1" data-json='{
             "modal": "#update",
             "headers": "Новая страница",

@@ -27,7 +27,7 @@
                     <a href="{{route('sliders.index')}}">Слайдер</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{{route('sliders.index')}}/{{$resource}}/{{$id_resource}}">{{$name}}</a>
+                    <a href="{{route('sections.index')}}/{{$resource}}/{{$id_resource}}">{{$name}}</a>
                 </li>
                 <script>
                     const URL = '{{route('sections.index')}}/{{$resource}}/{{$id_resource}}';
@@ -50,7 +50,7 @@
                 </script>
                 @break
             @endswitch
-            <li class="breadcrumb-item active"><i class="material-icons">&#xe869;</i> Билдер</li>
+            <li class="breadcrumb-item active ml-2"><i class="material-icons">&#xe869;</i> Билдер</li>
         </ol>
     </nav>
 
