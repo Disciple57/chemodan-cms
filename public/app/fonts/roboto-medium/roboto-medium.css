@@ -1,0 +1,13 @@
+/** roboto-medium **/
+@font-face {
+    font-family: 'roboto-medium';
+    src: local('roboto-medium'),
+        url('/app/fonts/roboto-medium/roboto-medium.woff') format('woff'),
+        url('/app/fonts/roboto-medium/roboto-medium.eot') format('eot'),
+        url('/app/fonts/roboto-medium/roboto-medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.roboto-medium {
+    font-family: 'roboto-medium';
+}

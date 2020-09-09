@@ -22,8 +22,8 @@ $(function () {
 
         $bind = $('#bind');
 
-        var observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
+        var observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
                 if (mutation.attributeName === 'class') {
 
                     if ($bind.length && !$bind.is(':focus') && !$_this_selected.hasClass('sortable-chosen')) {
@@ -140,7 +140,7 @@ $(function () {
                     // Бинд инпута с выбранным элементом (присвоение класса)
                     $_this_selected.prop('class', $(this).val());
                 })).append($('<small/>', {
-                    'text': 'ID'
+                'text': 'ID'
             })).append(
                 $('<input/>', {
                     'type': 'text',
@@ -287,10 +287,14 @@ $(function () {
         }
 
     }).on('mouseover', '#editor.constructor *:not([sel=true])', function (e) {
-        if (!$(e.target).attr('sel')) {$(e.target).attr('hovered', true);}
+        if (!$(e.target).attr('sel')) {
+            $(e.target).attr('hovered', true);
+        }
 
     }).on('mouseout', '#editor.constructor *', function (e) {
-        if (!$(e.target).attr('sel')) {$(e.target).removeAttr('hovered');}
+        if (!$(e.target).attr('sel')) {
+            $(e.target).removeAttr('hovered');
+        }
 
     }).on('click', '[data-panel=delete]', function () {
         $panel_body.empty();

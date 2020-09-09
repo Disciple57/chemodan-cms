@@ -1,0 +1,13 @@
+/** roboto-regular **/
+@font-face {
+    font-family: 'roboto-regular';
+    src: local('roboto-regular'),
+        url('/app/fonts/roboto-regular/roboto-regular.woff') format('woff'),
+        url('/app/fonts/roboto-regular/roboto-regular.eot') format('eot'),
+        url('/app/fonts/roboto-regular/roboto-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.roboto-regular {
+    font-family: 'roboto-regular';
+}

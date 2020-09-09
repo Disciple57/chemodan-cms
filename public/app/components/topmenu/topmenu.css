@@ -1,0 +1,39 @@
+.header .menu-toggler-icon {
+    cursor:pointer;
+}
+
+.mobile-menu {
+    z-index: 9999;
+    position: fixed;
+    overflow: hidden;
+    padding: 0 !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+.mobile-menu .left-cell {
+    width: 50%;
+    height: 100%;
+    background: #333333;
+    margin: 0 0 0 -50%;
+}
+
+.mobile-menu .left-cell .links {
+    padding: 1rem;
+    text-align: center;
+}
+
+.mobile-menu .left-cell .links .link {
+    display:block;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.mobile-menu .left-cell .closet {
+    height: 30px;
+}

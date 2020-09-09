@@ -1,0 +1,42 @@
+.bg-img-1 {
+    background-image: url(/app/img/5f510e387f750.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bg-img-2 {
+    background-image: url(/app/img/5f55f0721dcd7.jpg);
+    background-position: right top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bg-img-3 {
+    background-image: url(/app/img/5f55f5a89b301.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bg-img-4 {
+    background-image: url(/app/img/5f55fae02d4f1.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bg-img-5 {
+    background-image: url(/app/img/5f5606a613070.svg);
+    background-position: right center;
+    background-size: 400px;
+    background-repeat: no-repeat;
+}
+.bg-img-6 {
+    background-image: url(/app/img/5f560faba7747.svg);
+    background-position: left center;
+    background-size: 400px;
+    background-repeat: no-repeat;
+}
+.bg-img-7 {
+    background-image: url(/app/img/5f5610019ab3b.svg);
+    background-position: right center;
+    background-size: 400px;
+    background-repeat: no-repeat;
+}

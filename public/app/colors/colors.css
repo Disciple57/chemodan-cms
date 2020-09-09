@@ -1,0 +1,96 @@
+.color8 {
+    color: rgb(13, 14, 14);
+}
+.background-color8 {
+    background: rgb(13, 14, 14);
+}
+.border-color8 {
+    border-color: rgb(13, 14, 14) !important;
+}
+.hover-color8:hover {
+    color: rgb(13, 14, 14);
+}
+.color7 {
+    color: rgb(29, 31, 32);
+}
+.background-color7 {
+    background: rgb(29, 31, 32);
+}
+.border-color7 {
+    border-color: rgb(29, 31, 32) !important;
+}
+.hover-color7:hover {
+    color: rgb(29, 31, 32);
+}
+.color3 {
+    color: rgb(33, 37, 41);
+}
+.background-color3 {
+    background: rgb(33, 37, 41);
+}
+.border-color3 {
+    border-color: rgb(33, 37, 41) !important;
+}
+.hover-color3:hover {
+    color: rgb(33, 37, 41);
+}
+.color4 {
+    color: rgb(45, 45, 45);
+}
+.background-color4 {
+    background: rgb(45, 45, 45);
+}
+.border-color4 {
+    border-color: rgb(45, 45, 45) !important;
+}
+.hover-color4:hover {
+    color: rgb(45, 45, 45);
+}
+.color5 {
+    color: rgb(255, 255, 255);
+}
+.background-color5 {
+    background: rgb(255, 255, 255);
+}
+.border-color5 {
+    border-color: rgb(255, 255, 255) !important;
+}
+.hover-color5:hover {
+    color: rgb(255, 255, 255);
+}
+.color6 {
+    color: rgba(255, 255, 255, 0.5);
+}
+.background-color6 {
+    background: rgba(255, 255, 255, 0.5);
+}
+.border-color6 {
+    border-color: rgba(255, 255, 255, 0.5) !important;
+}
+.hover-color6:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+.color1 {
+    color: rgb(217, 190, 149);
+}
+.background-color1 {
+    background: rgb(217, 190, 149);
+}
+.border-color1 {
+    border-color: rgb(217, 190, 149) !important;
+}
+.hover-color1:hover {
+    color: rgb(217, 190, 149);
+}
+.color2 {
+    color: rgb(186, 164, 108);
+}
+.background-color2 {
+    background: rgb(186, 164, 108);
+}
+.border-color2 {
+    border-color: rgb(186, 164, 108) !important;
+}
+.hover-color2:hover {
+    color: rgb(186, 164, 108);
+}

@@ -1,0 +1,13 @@
+/** roboto-thin **/
+@font-face {
+    font-family: 'roboto-thin';
+    src: local('roboto-thin'),
+        url('/app/fonts/roboto-thin/roboto-thin.woff') format('woff'),
+        url('/app/fonts/roboto-thin/roboto-thin.eot') format('eot'),
+        url('/app/fonts/roboto-thin/roboto-thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.roboto-thin {
+    font-family: 'roboto-thin';
+}

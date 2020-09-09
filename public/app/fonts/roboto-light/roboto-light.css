@@ -1,0 +1,13 @@
+/** roboto-light **/
+@font-face {
+    font-family: 'roboto-light';
+    src: local('roboto-light'),
+        url('/app/fonts/roboto-light/roboto-light.woff') format('woff'),
+        url('/app/fonts/roboto-light/roboto-light.eot') format('eot'),
+        url('/app/fonts/roboto-light/roboto-light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.roboto-light {
+    font-family: 'roboto-light';
+}

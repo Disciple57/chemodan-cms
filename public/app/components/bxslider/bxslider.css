@@ -1,0 +1,77 @@
+.bx-wrapper {
+    position: relative;
+    background: rgb(22, 23, 24);
+}
+
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  z-index:99;
+  bottom: 10px;
+  width: 100%;
+}
+
+.bx-wrapper .bx-pager {
+  text-align: center;
+  font-size: .85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: #666;
+}
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: #b19a61;
+  text-indent: -9999px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 0 6px;
+  outline: 0;
+  transform: rotate(45deg);
+}
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active,
+.bx-wrapper .bx-pager.bx-default-pager a:focus {
+  background: rgb(22, 23, 24);
+  box-shadow:0 0 0 2px inset #b19a61;
+}
+.bx-wrapper .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+  display: inline-block;
+  vertical-align: bottom;
+  *zoom: 1;
+  *display: inline;
+}
+.bx-wrapper .bx-pager-item {
+  font-size: 0;
+  line-height: 0;
+}
+
+.bx-wrapper .bx-prev {
+  left: 10px;
+  box-shadow: 0 -2px 0 inset #b19a61, 2px 0 0 inset #b19a61;
+  transform: rotate(45deg);
+}
+.bx-wrapper .bx-prev:hover,
+.bx-wrapper .bx-prev:focus {
+}
+.bx-wrapper .bx-next {
+  right: 10px;
+  box-shadow: 0 2px 0 inset #b19a61, -2px 0 0 inset #b19a61;
+  transform: rotate(45deg);
+}
+.bx-wrapper .bx-next:hover,
+.bx-wrapper .bx-next:focus {
+}
+.bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  z-index: 9999;
+}
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
