@@ -23,19 +23,22 @@ $ git clone https://github.com/Disciple57/chemodan-cms.git ./
 
 Выполнить
 ```sh
-$ composer install
+$ cp .env.example .env
 ```
 
-Добавить атрибуты в файл .env
+Изменить переменные в файле .env в соответствии с вашими настройками mySql
 ```sh
-ADMIN_PANEL_URI=admin
-FILESYSTEM_DRIVER=publish
-PUBLIC_PATH=app
+DB_DATABASE=имя базы данных
+DB_USERNAME=пользователь
+DB_PASSWORD=пароль
 ```
+
 Выполнить
 
 ```sh
+$ composer install
 $ php artisan migrate --seed
+$ php artisan key:generate
 ```
 
 Доступ к панели - http://[сайт]/admin 
